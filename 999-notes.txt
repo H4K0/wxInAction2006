@@ -1,3 +1,5 @@
+	Notes from wxPythonInAction
+
 1.  In wxPython,“window” is the generic term for any object that displays on the screen (what other toolkits might call a “widget”).
 
 2. The five basic steps you must complete for every wxPython program you develop:
