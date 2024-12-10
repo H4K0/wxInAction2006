@@ -2,7 +2,7 @@
 
 import wx
 
-"""Hello, wxPython! program. For JPG image."""
+"""Hello, wxPython! program. For PNG image."""
 
 class Frame(wx.Frame):
         """Frame class that displays an image."""
