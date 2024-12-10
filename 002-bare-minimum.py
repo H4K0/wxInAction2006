@@ -6,11 +6,11 @@ One of the best learning start point
 
 import wx
 
-class App(wx.App):
+class MyApp(wx.App):
     def OnInit(self):
-        frame = wx.Frame(parent=None, title='Bare')
+        frame = wx.Frame(parent=None, title='My Bare Minimum Frame/Window')
         frame.Show()
         return True
 
-app = App()
+app = MyApp()
 app.MainLoop()

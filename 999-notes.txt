@@ -1,0 +1,23 @@
+1.  In wxPython,“window” is the generic term for any object that displays on the screen (what other toolkits might call a “widget”).
+
+2. The five basic steps you must complete for every wxPython program you develop:
+    1  Import the necessary wxPython package
+    2  Subclass the wxPython application class
+    3  Define an application initialization method
+    4  Create an application class instance
+    5  Enter the application’s main event loop
+
+3. The OnInit() method is where you’ll most often create frame objects. But you won’t usually directly create instances of wx.Frame as we did here. Instead, you’ll define your own wx.Frame subclass the same way we defined our own wx.App subclass.
+
+4. Invoking the Show() method makes the frame visible:
+    frame.Show(False)  # Make the frame invisible.
+    frame.Show(True)  # True is the default parameter value.
+    frame.Hide()  # Equivalent to frame.Show(False).
+
+5. [Brief: do not create __init__ method]Notice that we didn’t define an __init__() method for our application class. In Python, this means that the parent method, wx.App.__init__(), is automatically invoked on object creation. This is a good thing.
+
+6. 
+
+7. 
+
+8. 
