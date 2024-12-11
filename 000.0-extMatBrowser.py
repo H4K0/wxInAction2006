@@ -1,15 +1,19 @@
 #!/bin/env python3
-
 import wx
-
 '''
-docstring space
+docstring_space: FileBreowser global path variables
 '''
 
-pathExt = ""  # Variable global para almacenar el path
+class ExtracSignaturesApp(wx.App):
+    def OnInit(self):
+        '''
+        Inicialización de la aplicación
+        '''
+        self.frame = esFrame(None)
+        self.frame.Show()
+        return True
 
-
-class MyFrame(wx.Frame):
+class esFrame(wx.Frame):
     '''
     Implemented docstrings class MyFrame
     '''
@@ -51,25 +55,20 @@ class MyFrame(wx.Frame):
             # Obtener la ruta del archivo seleccionado
             self.path = file_dialog.GetPath()
             self.text_ctrl.SetValue(self.path)  # Mostrar la ruta en el campo de texto
+            global pathExt
+            pathExt = self.path  # Obtener el valor almacenado en MyFrame
             print("Retornamos el path desde OnFileBrowser:", self.path)
 
-
-class MyApp(wx.App):
-    def OnInit(self):
-        '''
-        Inicialización de la aplicación
-        '''
-        self.frame = MyFrame(None)
-        self.frame.Show()
-        return True
+#######
+# 
+# End of class declarations
+#
+######
 
 
 def main():
-    app = MyApp()
+    app = ExtracSignaturesApp()
     app.MainLoop()
-    # Acceder al path seleccionado desde el frame
-    global pathExt
-    pathExt = app.frame.path  # Obtener el valor almacenado en MyFrame
     print("Retornamos el path en la función main:", pathExt)
 
 
