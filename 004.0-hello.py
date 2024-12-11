@@ -18,7 +18,8 @@ class Frame(wx.Frame):
 class App(wx.App):
         """Application class."""
         def OnInit(self):
-            image = wx.Image('src/splash.jpg', wx.BITMAP_TYPE_JPEG)
+            image = wx.Image('src/splash.JPG', wx.BITMAP_TYPE_JPEG)
+            #image = wx.Image('src/splash.png', wx.BITMAP_TYPE_PNG)
             self.frame = Frame(image)
             self.frame.Show()
             self.SetTopWindow(self.frame)
