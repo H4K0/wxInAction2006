@@ -4,6 +4,8 @@ import wx
 docstring_space: FileBreowser global path variables
 '''
 
+pathExt = ''
+
 class ExtracSignaturesApp(wx.App):
     def OnInit(self):
         '''
