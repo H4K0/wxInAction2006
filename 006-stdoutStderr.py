@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+#Esta malo, no funciona
+
+
 import wx
 import sys
 class Frame(wx.Frame):
