@@ -29,4 +29,19 @@ class Hijo(Padre, Madre): #Creamos clase hija que hereda de Padre y luego de Mad
         self.cara = cara
         
 Tomas = Hijo('Marrones', 'Negras', 'Larga', 2, 2)
-print (Tomas.ojos, Tomas.cejas, Tomas.cara, Tomas.piernas, Tomas.brazos)
+Juana = Hijo('Negras', 'Miel', 'Larga', 2, 2)
+#print (Tomas.ojos, Tomas.cejas, Tomas.cara, Tomas.piernas, Tomas.brazos)
+print("Tomas:")
+print("   Ojos: " + Tomas.ojos)
+print("   Ojos: " + Tomas.cejas)
+print("   Ojos: " + Tomas.cara)
+print("   Ojos: " + str(Tomas.piernas))
+print("   Ojos: " + str(Tomas.brazos))
+print("\nJuana:")
+print("   Ojos: " + Juana.ojos)
+print("   Ojos: " + Juana.cejas)
+print("   Ojos: " + Juana.cara)
+print("   Ojos: " + str(Juana.piernas))
+print("   Ojos: " + str(Juana.brazos))
+
+#Tomas.cejas, Tomas.cara, Tomas.piernas, Tomas.brazos)
