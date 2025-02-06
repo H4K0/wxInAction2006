@@ -21,6 +21,11 @@ print('Sheet title:', sheet.title)
 wb.create_sheet('Salida')
 print(wb.sheetnames)
 
+wb.active[1]
+print(wb.active)
+
+wb.active["A1"] = "H4K0 PROOF ;)"
+
 wb.save(filename='strg/9° A.xlsx')
 
 wb.close
