@@ -25,6 +25,7 @@ wb.active[1]
 print(wb.active)
 
 wb.active["A1"] = "H4K0 PROOF ;)"
+wb.active["A2"] = "H4K0 PROOF ;)"
 
 wb.save(filename='strg/9° A.xlsx')
 
