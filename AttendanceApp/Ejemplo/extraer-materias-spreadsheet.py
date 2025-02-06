@@ -13,3 +13,14 @@ else:
 
 wb = openpyxl.load_workbook(filename='strg/9° A.xlsx')
 print(wb.sheetnames)
+sheet = wb.active
+print('Sheet:', sheet)
+
+print('Sheet title:', sheet.title)
+
+wb.create_sheet('Salida')
+print(wb.sheetnames)
+
+wb.save(filename='strg/9° A.xlsx')
+
+wb.close

@@ -2,8 +2,14 @@
 
 import openpyxl
 
-ssBook = openpyxl.Workbook()
-sheet = ssBook.active
+wb = openpyxl.load_workbook(filename='strg/ssFile.xlsx')
+#ws0 = ssBook.active
+print(wb.sheetnames)
+print(len(wb.sheetnames))
+
+wb.active = 0
+print(wb.active)
+
 
 data = [
     ('Nombre', 'Edad', 'Compañía'),
@@ -14,9 +20,15 @@ data = [
 ]
 
 for i, j in enumerate(data):
-    sheet[f'A{i+1}'] = j[0]
-    sheet[f'B{i+1}'] = j[1]
-    sheet[f'c{i+1}'] = j[2]
+    wb.active[f'A{i+1}'] = j[0]
+    wb.active[f'B{i+1}'] = j[1]
+    wb.active[f'c{i+1}'] = j[2]
 
-ssBook.save('strg/ssFile.xlsx')
-ssBook.close
+
+wb.active = 1
+print(wb.active)
+
+wb.active["A1"] = "writing ;)"
+
+wb.save(filename='strg/ssFile.xlsx')
+wb.close
