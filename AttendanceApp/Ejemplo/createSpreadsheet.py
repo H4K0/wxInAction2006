@@ -2,7 +2,7 @@
 
 import openpyxl
 
-wb = openpyxl.load_workbook(filename='strg/ssFile.xlsx')
+wb = openpyxl.load_workbook(filename='AttendanceApp/Ejemplo/strg/ssFile.xlsx')
 #ws0 = ssBook.active
 print(wb.sheetnames)
 print(len(wb.sheetnames))
@@ -30,5 +30,5 @@ print(wb.active)
 
 wb.active["A1"] = "writing ;)"
 
-wb.save(filename='strg/ssFile.xlsx')
+wb.save(filename='AttendanceApp/Ejemplo/strg/ssFile.xlsx')
 wb.close

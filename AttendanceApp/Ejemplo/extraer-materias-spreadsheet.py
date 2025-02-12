@@ -9,7 +9,7 @@ if os.path.isfile('strg/9° A.xlsx'):
     pass
 else:
     print('El archivo no debe ser creado.')
-    exit()
+    pass
 
 wb = openpyxl.load_workbook(filename='strg/9° A.xlsx')
 print(wb.sheetnames)
