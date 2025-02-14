@@ -46,14 +46,42 @@ wb.active = wb['Sheet']
 wb.active["A1"] = "H4K0 PROOF ;)"
 print('Active: ', wb.active)
 
+
+
+"""
 for h in range(len(listNames)):
     wb.active = h
     print('Active:', h, wb.active)
     for i, j in enumerate(data):
-        wb.active[f'A{i+1}'] = j[0]
-        wb.active[f'B{i+1}'] = j[1]
-        wb.active[f'c{i+1}'] = j[2]
+        wb.active[f'X{i+1}'] = j[0]
+        wb.active[f'Y{i+1}'] = j[1]
+        wb.active[f'Z{i+1}'] = j[2]
+    print('Hecho!')
+"""
+
+
+"""
+wb.active = wb['Datos']
+print('Active:', wb.active)
+wb.active = 7
+print('Active:', wb.active)
+"""
+
+
+datos = wb['Datos']
+
+datos['D3'] = 'Octavio'
+
+x = datos['D5']
+print(datos['D5'].value)
+print(x.value)
+
+if x.value == 'Abraxas':
+    print('Muy bien sí es.')
+else:
+    print('Fallaste')
+
+
 
 wb.save('AttendanceApp/Ejemplo/strg/otro2.xlsx')
-
 wb.close
