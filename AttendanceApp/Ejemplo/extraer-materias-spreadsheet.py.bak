@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+
+import openpyxl
+import os.path
+
+#Create a workbook
+if os.path.isfile('AttendanceApp/Ejemplo/strg/9° A.xlsx'):
+    print('El archivo ya existe no se sobreescribirá.')
+    pass
+else:
+    print('El archivo no debe ser creado.')
+    pass
+
+wb = openpyxl.load_workbook(filename='AttendanceApp/Ejemplo/strg/9° A.xlsx')
+#print(wb.sheetnames)
+sheet = wb.active
+#print('Sheet:', sheet)
+
+#print('Sheet title:', sheet.title)
+
+"""
+if wb.sheetnames[1] == 'Salida':
+    print('Nada que hacer')
+else:
+    wb.create_sheet('Salida')
+    print('Se creó la hoja \"Salida\" correctamente')
+print(wb.sheetnames)
+
+"""
+#wb.active[1]
+#print(wb.active)
+#wb.active["A1"] = "H4K0 PROOF ;)"
+#wb.active["A2"] = "H4K0 PROOF ;)"
+
+entrada = wb['Hoja1']
+salida = wb['Salida']
+#salida['A1'] = 'H4K0'
+#salida['A2'] = 'proof'
+
+filas = ['B','C','D','E','F','G','N','P','R','T','V','X','Z','AB','AD','AF','AH','AJ','AL','AN','AP','AR','AT','AV']
+filasImp = ['D','N','P','R','T','V','X','Z','AB','AD','AF','AH','AJ','AL','AN','AP','AR','AT','AV']
+columnas = [9, 67]
+
+"""
+for j in range(columnas[0], columnas[1], 4):
+    for i in filasImp:
+        k = str(entrada[i+str(j)].value) if entrada[i+str(j)].value is not None else ""
+        if i == 'D':
+            tam = len(str(entrada[i+'9'].value))
+            tam = tam + 8
+        else:
+            tam = len(str(entrada[i+'9'].value))
+        k = k.center(tam+2)
+        print(k, end=' ')
+    print()
+"""
+paso =[]
+for j in range(columnas[0], columnas[1], 4):
+    temp = []
+    for i in filasImp:
+        k = str(entrada[i+str(j)].value) if entrada[i+str(j)].value is not None else ""
+        temp.append(k)
+        #print(k)
+    paso.append(temp)
+
+print(paso)
+
+wb.save(filename='AttendanceApp/Ejemplo/strg/9° A.xlsx')
+
+wb.close

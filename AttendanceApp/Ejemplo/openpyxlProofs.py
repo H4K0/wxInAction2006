@@ -17,7 +17,6 @@ ws3.sheet_properties.tabColor = '1072BA'
 wb.save('AttendanceApp/Ejemplo/strg/otro2.xlsx')
 """
 
-
 data = [
     ('Nombre', 'Edad', 'Compañía'),
     ('John', 21, 'Facebook'),
@@ -27,16 +26,12 @@ data = [
 ]
 
 wb = openpyxl.load_workbook('AttendanceApp/Ejemplo/strg/otro2.xlsx')
-
 #newSheet = wb.create_sheet('Nueva')
 
 print(wb.sheetnames)
-
 listNames = wb.sheetnames
-
 print(listNames)
 print(type(listNames))
-activeSheet = wb.active
 
 wb.active = wb['Nueva']
 wb.active["A1"] = "H4K0 PROOF ;)"
@@ -81,7 +76,22 @@ if x.value == 'Abraxas':
 else:
     print('Fallaste')
 
+cr = datos['A1':'G6']
 
+print('Rango de celdas:')
+#      [Fila][Columna]
+print(cr[0][0].value)
+print(cr[5][6].value)
+
+print('For:')
+
+for i in range(len(cr)):  # Detecta automáticamente el tamaño
+    for j in range(len(cr[i])):  
+        k = str(cr[i][j].value) if cr[i][j].value is not None else ""
+        k = k.center(15)
+        print(k, end=' ')
+    print()
 
 wb.save('AttendanceApp/Ejemplo/strg/otro2.xlsx')
 wb.close
+
