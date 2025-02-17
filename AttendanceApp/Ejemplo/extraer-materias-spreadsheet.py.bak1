@@ -2,7 +2,6 @@
 
 import openpyxl
 import os.path
-from openpyxl.styles import Font, Alignment
 
 myPath = 'AttendanceApp/Ejemplo/strg/9° A.xlsx'
 filas = ['B','C','D','E','F','G','N','P','R','T','V',
@@ -10,15 +9,21 @@ filas = ['B','C','D','E','F','G','N','P','R','T','V',
          'AP','AR','AT','AV'
         ]
 filasImp = ['D','N','P','R','T','V','X','Z','AB','AD',
-            'AF','AH','AJ','AL','AN','AP','AR','AT'
+            'AF','AH','AJ','AL','AN','AP','AR','AT','AV'
            ]
-sl = ['','Álgebra', 'Arts', 'Biology', 'Citizenship', 'Computer Science',
+sl = ['Álgebra', 'Arts', 'Biology', 'Citizenship', 'Computer Science',
       'Desarrollo Humano', 'English', 'Estadística', 'Filosofía', 'Física',
       'Geography', 'Geometría', 'Historia', 'Lenguaje', 'Ortografía',
       'Physical Education', 'Química'
      ]
 columnas = [10, 77]
+superior = []
 paso =[]
+alto = []
+bajo = []
+superior_fin = ""
+alto_fin = ""
+bajo_fin = ""
 
 if os.path.isfile(myPath):
     print('.:. Archivo encontrado .:.')
@@ -44,36 +49,13 @@ for i in range(len(paso)):
 #print(len(paso))
 ###################
 ###################
-#print(len(paso))
-
-
-salida['A1'] = 'ESTUDIANTE'
-salida['B1'] = 'BAJO'
-salida['C1'] = 'ALTO'
-salida['D1'] = 'SUPERIOR'
-
-salida['A1'].font = Font(bold = True)
-salida['B1'].font = Font(bold = True)
-salida['C1'].font = Font(bold = True)
-salida['D1'].font = Font(bold = True)
-
-salida.column_dimensions['A'].width = 20
-salida.column_dimensions['B'].width = 30
-salida.column_dimensions['C'].width = 30
-salida.column_dimensions['D'].width = 30
-
-for l in range(0, len(paso)):
+print(len(paso))
+for l in range(1, len(paso)):
     superior_fin = ""
     alto_fin = ""
     bajo_fin = ""
-    
     nt = paso[l]
-
-    superior = []
-    alto = []
-    bajo = []
-
-    for i in range(1,18):
+    for i in range(1,17):
         m = nt[i].replace(",",".")
         nt[i] = float(m)
         if nt[i] <= 2.9:
@@ -105,19 +87,12 @@ for l in range(0, len(paso)):
     print("Alto: " + alto_fin)
     print("Superior: " + superior_fin)
     print('##########################')
-    salida[f'A{l+2}'] = nt[0]
-    salida[f'B{l+2}'] = bajo_fin
-    salida[f'C{l+2}'] = alto_fin
-    salida[f'D{l+2}'] = superior_fin
-    
-    salida[f'B{l+2}'].alignment = Alignment(wrap_text = True)
-    salida[f'C{l+2}'].alignment = Alignment(wrap_text = True)
-    salida[f'D{l+2}'].alignment = Alignment(wrap_text = True)
-
-
 
 ###################
 ###################
+
+
+
 
 wb.save(filename=myPath)
 wb.close
