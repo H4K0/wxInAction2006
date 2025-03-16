@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from openpyxl.utils import get_column_letter
 
 n = 0
 estado = "Positivo" if n > 0 else "Negativo" if n < 0 else "Cero"

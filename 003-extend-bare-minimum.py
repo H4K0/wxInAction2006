@@ -3,9 +3,10 @@ import wx
 
 """
 [Spare.py] extend-bare-minimum.py is a starting point for a wxPython program.
+Esta parte constitye parte de la documentación del código y se llama docstring.
 """
 
-"""Example of docstring usage:
+"""  Example of  docstring  usage:
 Module docstring:
     import spare
     print spare.__doc__

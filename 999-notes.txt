@@ -1,4 +1,4 @@
-	Notes from wxPythonInAction
+	            Notes from wxPythonInAction
 
 1.  In wxPython,“window” is the generic term for any object that displays on the screen (what other toolkits might call a “widget”).
 
@@ -18,8 +18,8 @@
 
 5. [Brief: do not create __init__ method]Notice that we didn’t define an __init__() method for our application class. In Python, this means that the parent method, wx.App.__init__(), is automatically invoked on object creation. This is a good thing.
 
-6. 
+6. Every wxPython program must have one application object and at least one frame object.
 
-7. 
+7. To trigger a shutdown programatically, you can call Close() on all top-level windows.
 
 8. 

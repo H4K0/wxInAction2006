@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 
-import openpyxl
 import os.path
-from openpyxl.styles import Font, Alignment
+import openpyxl
+from openpyxl.styles import Font
+from openpyxl.styles import Alignment
 
-myPath = 'AttendanceApp/Ejemplo/strg/9° A.xlsx'
-filas = ['B','C','D','E','F','G','N','P','R','T','V',
-         'X','Z','AB','AD','AF','AH','AJ','AL','AN',
-         'AP','AR','AT','AV'
-        ]
-filasImp = ['D','N','P','R','T','V','X','Z','AB','AD',
+myPath = 'Ejemplo/strg/9° A.xlsx'
+print("Ruta absoluta de myPath:", os.path.abspath(myPath))
+
+filas =     ['B','C','D','E','F','G','N','P','R','T','V',
+            'X','Z','AB','AD','AF','AH','AJ','AL','AN',
+            'AP','AR','AT','AV'
+            ]
+filasImp =  ['D','N','P','R','T','V','X','Z','AB','AD',
             'AF','AH','AJ','AL','AN','AP','AR','AT'
-           ]
-sl = ['','Álgebra', 'Arts', 'Biology', 'Citizenship', 'Computer Science',
-      'Desarrollo Humano', 'English', 'Estadística', 'Filosofía', 'Física',
-      'Geography', 'Geometría', 'Historia', 'Lenguaje', 'Ortografía',
-      'Physical Education', 'Química'
-     ]
+            ]
+sl =        ['','Álgebra', 'Arts', 'Biology', 'Citizenship', 'Computer Science',
+            'Desarrollo Humano', 'English', 'Estadística', 'Filosofía', 'Física',
+            'Geography', 'Geometría', 'Historia', 'Lenguaje', 'Ortografía',
+            'Physical Education', 'Química'
+            ]
 columnas = [10, 77]
 paso =[]
 
@@ -30,7 +33,9 @@ wb = openpyxl.load_workbook(filename=myPath)
 
 sheet = wb.active
 entrada = wb['Hoja1']
+#Si salida existe, asignarla, de lo contrario crearla.
 salida = wb['Salida']
+
 
 for j in range(columnas[0], columnas[1], 4):
     temp = []

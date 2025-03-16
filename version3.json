@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "files": [
+      "app.py",
+      "config.json",
+      "assets/logo.png",
+      "assets/styles/main.css",
+      "data/database.db"
+    ]
+  }

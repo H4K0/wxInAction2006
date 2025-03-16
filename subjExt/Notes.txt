@@ -1,0 +1,12 @@
+
+
+Debe haber un montón de alternativas, pero esta me acomoda:
+
+import os
+
+separador = os.path.sep
+dir_actual = os.path.dirname(os.path.abspath(__file__))
+dir = separador.join(dir_actual.split(separador)[:-1])
+print(dir)
+
+os.path.sep nos da el separador de archivos usado en la plataforma actual, que sería "/" para Linux y "\" para Windows. El resto es separar el path en sus componentes con split, descartar el último componente (el subdirectorio actual) y volver a armar el path usando join.
